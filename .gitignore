@@ -1,0 +1,10 @@
+# Ignore raster test renders under assets
+assets/*.png
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+
+# Agents and Skills (project-scoped tools)
+.agents/
+skills-lock.json

@@ -1,0 +1,50 @@
+name: Rebuild Decision Record & README
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'assets/receipt.svg'
+      - 'assets/receipt-static.svg'
+      - 'README.md'
+  schedule:
+    # Run weekly on Monday at 06:00 UTC
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Regenerate Receipt and README
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python tools/build.py
+
+      - name: Commit and push changes if meaningful output changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Check if there are changes beyond just the TIMESTAMP date and SHA lines
+          if git diff -I 'TIMESTAMP:' -I 'SHA ' --quiet assets/receipt.svg assets/receipt-static.svg README.md; then
+            echo "No meaningful changes detected (or only TIMESTAMP/SHA changed). Skipping commit."
+            git checkout -- assets/receipt.svg assets/receipt-static.svg README.md || true
+          else
+            echo "Meaningful changes detected. Committing and pushing..."
+            git add assets/receipt.svg assets/receipt-static.svg README.md
+            git commit -m "chore(receipt): regenerate decision record [skip ci]"
+            git push
+          fi
