@@ -1,86 +1,66 @@
-# Design System & Engineering Architecture: The Decision Record
+# Design System & Visual Identity: SIGNAL / SYNTAX
 
-## 1. Concept: The Decision Receipt
+## 1. Creative Concept
 
-Most developer profile READMEs suffer from marketing puffery: subjective claims, generic shield badges, and unverified skill graphs.
+**SIGNAL / SYNTAX** is an original developer identity crafted around **kinetic typography, precise spacing, and subtle system-inspired motion**.
 
-The **Decision Record** inverts this pattern. It presents the candidate's engineering qualifications as an authentic, deterministic **audit log** printed on thermal paper answering a single concrete question:
+Instead of decorative badges, illustration collages, or novelty receipts, this identity treats software engineering as an art of precision:
+- **Signal**: The living transmission—an animated electric-blue signal trace drawing across the baseline.
+- **Syntax**: The deterministic structure—geometric display typography paired with crisp monospaced metadata.
 
-> *"Evaluate candidate for software engineering internship."*
-
-### Visual & Physical Design Principles
-- **Substrate**: Thermal receipt paper (`#EFEBDD`) with a perforated sawtooth bottom tear edge.
-- **Ink**: Deep carbon near-black (`#1B1B1B`) at 13px monospaced sizing with high-contrast bold headers (`#111111`).
-- **Accent Stamp**: A single vermilion red stamp (`#D9432B`) stamped at `-2.2°` rotation stating `[ WORTH A CONVERSATION ]`.
-- **Typography**: Subsetted JetBrains Mono (OFL license in `assets/fonts/OFL.txt`) embedded directly into the SVG as base64 WOFF2 with system monospace fallback.
-- **Discipline**: Every line is constrained to **44 characters or fewer**, guaranteeing zero text overflow across all viewports and monospace fonts.
-
-### Animation & Motion Architecture
-- **CSS-Only**: Zero JavaScript execution inside the SVG.
-- **Top-to-Bottom Print Sequence**: Lines reveal sequentially with staggered animation delays over ~2.5 seconds.
-- **Stamp Impact**: At ~2.7s, the `WORTH A CONVERSATION` stamp drops in from scale 1.6 to 1 with a slight rotation settle, completing by 3.1s.
-- **Resilient Fallback**: Keyframes are defined exclusively with `from { ... }`. The default state of every element is the complete, finished receipt. If animations fail, block, or take place in static renderers, the receipt displays completely.
-- **Accessibility**: `@media (prefers-reduced-motion: reduce)` immediately disables all keyframe animations.
-- **Static Asset**: A static duplicate is maintained at `assets/receipt-static.svg` for headless rasterization and fallback contexts.
+### Visual Personality
+- **Typographic Wordmark**: `JASWANTH` rendered in bold, geometric letterforms with tracked proportions (`-0.02em` letter spacing).
+- **Secondary Taxonomy**: `SOFTWARE ENGINEERING / AI SYSTEMS / PRODUCT EXPERIMENTS` in high-legibility monospace (`0.16em` letter spacing).
+- **Structural Accents**: Corner crosshairs, category indicator (`SIGNAL // 01 · SYNTAX`), and baseline pulse node.
+- **Telemetry-Free Focus**: Removed all arbitrary coordinates, fake telemetry, and decorative metrics to keep the engineering identity grounded and clear.
+- **Restrained Palette**:
+  - **Dark Mode** (`#0D1117` GitHub Canvas): `#F8FAFC` display letters (contrast ratio 18.09:1), `#38BDF8` electric sky-blue signal trace (contrast ratio 8.83:1), `#94A3B8` secondary microcopy.
+  - **Light Mode** (`#FFFFFF` GitHub Canvas): `#0F172A` deep carbon letters (contrast ratio 17.85:1), `#0369A1` electric blue signal trace (contrast ratio 5.93:1), `#64748B` secondary microcopy.
+  - Transparent SVG background for seamless integration across all themes.
 
 ---
 
-## 2. Fact Integrity & Zero-Placeholder Governance
+## 2. Motion Design & Animation
 
-Every claim and metric on both the SVG receipt and the README is governed by `facts.json`:
-- **Traceability**: Every metric must contain `value`, `source`, and `verified_on`.
-- **Stack Dependency Verification**: Every technology listed in the Stack is cross-referenced with repository source files in `facts.json` (e.g. `AI-VISIBILITY-SCORE/docker-compose.yml`, `MerchantOS/package.json`).
-- **Build Enforcement**: `tools/build.py` validates that every fact has a verifiable source. If any fact lacks a source or if any placeholder text (such as `NEEDS CONFIRMATION` or `<...>` tokens) is detected, the build aborts with an exit code of 1.
+The hero animation is a **one-time entrance sequence** lasting approximately **1.4 seconds**:
+1. **Signal Trace** (`0.05s – 0.95s`): The fine baseline rule draws across from left to right using `stroke-dasharray` and `stroke-dashoffset` interpolation.
+2. **Sequential Wordmark Reveal** (`0.10s – 0.65s`): Individual characters of `J A S W A N T H` reveal with a staggered vertical settling offset (`translateY(8px) -> translateY(0)`).
+3. **Secondary Subtitle** (`0.85s – 1.45s`): The discipline classification resolves smoothly into position.
+4. **Structural Geometry** (`1.10s – 1.40s`): Corner registration marks and header tags fade into place.
+
+### Graceful Degradation & Motion Rules
+- **No Infinite Loops**: Plays once; no bouncing, flashing cursors, or distracting loops.
+- **`from`-Only Keyframes**: All keyframes are defined solely with `from { ... }`. The default, un-animated state of every SVG node is the completed, 100% visible design.
+- **Accessibility**: `@media (prefers-reduced-motion: reduce)` immediately turns off all transitions and displays the final composition instantly.
 
 ---
 
-## 3. How to Add a Rule
+## 3. GitHub Rendering Constraints & Limitations
 
-To add or modify an evaluation rule:
+GitHub processes SVGs referenced in Markdown via image tags (`<img>` or `<picture>`). This imposes specific operational constraints:
 
-1. **Verify Evidence**: Locate the verifiable commit, test assertion, or architectural boundary in the target repository.
-2. **Open `facts.json`**: Navigate to the `"rules"` array and add a new entry:
-   ```json
-   {
-     "id": "06",
-     "title": "DESCRIPTIVE RULE NAME",
-     "fact_line1": "Concise fact under 44 characters.",
-     "fact_line2": "Second line under 44 characters.",
-     "ref": "Ref: repo/path/to/evidence",
-     "source": "Exact file or commit reference proving the claim"
-   }
+1. **No JavaScript**: Scripts inside SVG are blocked by GitHub's content security policy. All animations are 100% pure CSS `@keyframes`.
+2. **No Remote Web Fonts**: External font imports (`@import url(...)`) are blocked. The wordmark uses native system geometric font stacks (`-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', system-ui, sans-serif`) with system monospace fallbacks for metadata.
+3. **Dual Theme Rendering via `<picture>`**:
+   GitHub natively supports the HTML `<picture>` element with media queries in Markdown:
+   ```html
+   <picture>
+     <source media="(prefers-color-scheme: dark)" srcset="assets/signal-wordmark-dark.svg">
+     <source media="(prefers-color-scheme: light)" srcset="assets/signal-wordmark-light.svg">
+     <img alt="JASWANTH" src="assets/signal-wordmark.svg" width="100%">
+   </picture>
    ```
-3. **Check Character Limits**: Ensure neither `fact_line1` nor `fact_line2` exceeds 44 characters.
-4. **Rebuild**: Run `python3 tools/build.py`.
+   This guarantees that both GitHub Light and GitHub Dark display pixel-perfect colors, while `signal-wordmark.svg` provides the standalone fallback.
 
 ---
 
-## 4. How to Rebuild Locally
+## 4. Content Architecture
 
-### Prerequisites
-- Python 3.10+
-- `gh` CLI (authenticated) or network access for GitHub API metrics
-
-### Commands
-```bash
-# 1. (One-time or font update) Subset JetBrains Mono and generate embedded CSS:
-python3 tools/prepare_font.py
-
-# 2. Rebuild the animated SVG, static SVG, and README.md:
-python3 tools/build.py
-
-# 3. Optional: Render static SVG to PNG for preview:
-magick assets/receipt-static.svg assets/receipt.png
-magick -resize 360x assets/receipt-static.svg assets/receipt-360.png
-```
-
----
-
-## 5. Continuous Automation
-
-The repository includes `.github/workflows/build.yml` which:
-- Runs automatically on every push to `main`.
-- Runs on a daily schedule (`06:00 UTC`) to refresh GitHub public repository counts and 90-day activity.
-- Dynamically drops the "pushed in last 90d" counter if activity falls below 3 repos.
-- Uses minimal GitHub Actions permissions (`contents: write`).
-- Commits and pushes only when regenerated output files differ from the repository state.
+1. **Hero Wordmark**: Kinetic typographic asset establishing identity and discipline taxonomy without arbitrary telemetry.
+2. **Introduction & Current Focus**: Plain, credible statement of full-stack engineering, AI systems, and developer tooling; current focus grounded in active project architecture.
+3. **Selected Work**: Three flagship systems (`MerchantOS`, `Memra`, `Barabari Collective`) demonstrating test coverage, deterministic isolation, and verified technical decisions.
+4. **Professional Experience**: Three concise entries (`Xentro`, `Webbheads`, `Toji Labs`) highlighting shipped products, typed component architectures, client engagements, and revenue.
+5. **Selected Recognition**: Verified differentiators (`JPMorgan Chase Code for Good 2026`, `IdeaSprint 3.0 Winner`, `AWS Student Builder Group at IIT Jodhpur`).
+6. **More Work**: Compact references to additional public builds (`AI Visibility Score Tracker`, `CodeAtlas`, `CareLoop`, `OCR-to-Excel Pipeline`).
+7. **Technical Toolkit**: Selective list of verified languages, runtimes, infrastructure tools, and AI engineering methodologies.
+8. **Secondary Signal & Contact**: Understated note on algorithmic problem solving (250+ LeetCode) and campus community leadership; direct GitHub and LinkedIn links.

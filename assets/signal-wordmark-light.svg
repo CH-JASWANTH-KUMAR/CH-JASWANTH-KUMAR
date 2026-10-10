@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 180" width="880" height="180">
+  <defs>
+    <style><![CDATA[
+      text {
+        text-rendering: geometricPrecision;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .brand-char {
+        font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 800;
+        font-size: 56px;
+        fill: #0F172A;
+        letter-spacing: -0.02em;
+        animation: letterIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+      }
+
+      .mono-label {
+        font-family: ui-monospace, 'SF Pro Mono', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', Menlo, Consolas, monospace;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        fill: #64748B;
+        text-transform: uppercase;
+      }
+
+      .secondary-line {
+        font-family: ui-monospace, 'SF Pro Mono', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', Menlo, Consolas, monospace;
+        font-size: 12.5px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        fill: #334155;
+        text-transform: uppercase;
+        animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+        animation-delay: 0.85s;
+      }
+
+      .accent-tag {
+        font-family: ui-monospace, 'SF Pro Mono', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', Menlo, Consolas, monospace;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        fill: #0369A1;
+        text-transform: uppercase;
+      }
+
+      .signal-trace {
+        stroke: #E2E8F0;
+        stroke-width: 1;
+        stroke-dasharray: 832;
+        stroke-dashoffset: 0;
+        animation: traceDraw 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+        animation-delay: 0.05s;
+      }
+
+      .signal-lead {
+        stroke: #0369A1;
+        stroke-width: 1.5;
+        stroke-dasharray: 832;
+        stroke-dashoffset: 0;
+        animation: traceDraw 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+        animation-delay: 0.05s;
+      }
+
+      .frame-corner {
+        stroke: #CBD5E1;
+        stroke-width: 1;
+        fill: none;
+      }
+
+      .pulse-node {
+        fill: #0369A1;
+      }
+
+      @keyframes traceDraw { from { stroke-dashoffset: 832; } }
+      @keyframes letterIn { from { opacity: 0; transform: translateY(8px); } }
+      @keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } }
+      @keyframes microFade { from { opacity: 0; } }
+
+      .c-1 { animation-delay: 0.10s; }
+      .c-2 { animation-delay: 0.17s; }
+      .c-3 { animation-delay: 0.24s; }
+      .c-4 { animation-delay: 0.31s; }
+      .c-5 { animation-delay: 0.38s; }
+      .c-6 { animation-delay: 0.45s; }
+      .c-7 { animation-delay: 0.52s; }
+      .c-8 { animation-delay: 0.59s; }
+
+      .anim-micro {
+        animation: microFade 0.6s ease-out backwards;
+        animation-delay: 1.1s;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; }
+      }
+    ]]></style>
+  </defs>
+
+  <!-- Framing & Minimal Geometry -->
+  <g class="anim-micro">
+    <path d="M 24 24 L 32 24 M 24 24 L 24 32" class="frame-corner" />
+    <path d="M 856 24 L 848 24 M 856 24 L 856 32" class="frame-corner" />
+    <text x="40" y="29" class="accent-tag">SIGNAL // 01</text>
+    <text x="148" y="29" class="mono-label">SYNTAX</text>
+    <text x="856" y="29" text-anchor="end" class="mono-label">BUILDING · TESTING · ITERATING</text>
+  </g>
+
+  <!-- Wordmark Letters (J A S W A N T H) -->
+  <g transform="translate(0, 0)">
+    <text x="40"  y="106" class="brand-char c-1">J</text>
+    <text x="84"  y="106" class="brand-char c-2">A</text>
+    <text x="136" y="106" class="brand-char c-3">S</text>
+    <text x="187" y="106" class="brand-char c-4">W</text>
+    <text x="257" y="106" class="brand-char c-5">A</text>
+    <text x="309" y="106" class="brand-char c-6">N</text>
+    <text x="361" y="106" class="brand-char c-7">T</text>
+    <text x="407" y="106" class="brand-char c-8">H</text>
+  </g>
+
+  <!-- Baseline Signal Trace -->
+  <line x1="24" y1="126" x2="856" y2="126" class="signal-trace" />
+  <line x1="24" y1="126" x2="460" y2="126" class="signal-lead" />
+  <circle cx="460" cy="126" r="2.5" class="pulse-node anim-micro" />
+
+  <!-- Secondary Line: Subtitle & Discipline Taxonomy -->
+  <text x="40" y="156" class="secondary-line">SOFTWARE ENGINEERING / AI SYSTEMS / PRODUCT EXPERIMENTS</text>
+
+  <!-- Bottom Framing Geometry -->
+  <g class="anim-micro">
+    <path d="M 856 160 L 848 160 M 856 160 L 856 152" class="frame-corner" />
+    <path d="M 24 160 L 32 160 M 24 160 L 24 152" class="frame-corner" />
+  </g>
+</svg>
