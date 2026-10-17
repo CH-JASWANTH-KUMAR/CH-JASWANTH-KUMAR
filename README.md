@@ -1,87 +1,72 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/signal-wordmark-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/signal-wordmark-light.svg">
-  <img alt="JASWANTH — Software Engineering / AI Systems / Product Experiments" src="assets/signal-wordmark.svg" width="100%">
-</picture>
+<p align="center">
+  <img src="assets/developer-reel.gif" alt="CH Jaswanth Kumar — Terminal developer reel showcasing software engineering, full-stack systems, and flagship projects including MerchantOS, Memra, and Barabari Collective" width="100%">
+</p>
 
-Software engineer and Computer Science undergraduate at GITAM University building full-stack applications, developer tooling, and systems powered by language models. My work centers on bounded automation—using deterministic code, isolated math services, and automated tests to keep model outputs reliable.
+Computer Science undergraduate at GITAM University focused on software engineering, full-stack systems, and AI architectures. I build software where reliability matters—pairing deterministic engineering with LLM capabilities, from revenue engines to browser-based document compilers.
 
----
-
-### Current focus
-
-Evaluating autonomous decision loops, isolating mathematical calculations from LLM inference, and compiling client-side documents directly inside the browser.
+[GitHub](https://github.com/CH-JASWANTH-KUMAR) &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/jaswanth-kumar-chettupalli-7b0809333/)
 
 ---
 
-### Selected work
+### Selected Work
 
-#### [MerchantOS](https://github.com/CH-JASWANTH-KUMAR/MerchantOS)
-Autonomous revenue decision engine pairing association rule mining with bounded discount automation.
-* **Technical implementation**: Backed by 107 passing automated tests; financial math and margin checks are isolated in deterministic TypeScript services rather than LLM inference, with settlement bounded to Razorpay Test Mode.
-* **Stack**: Next.js 14 · TypeScript · Tailwind CSS · Groq · Razorpay API · Jest
-* **Links**: [Repository](https://github.com/CH-JASWANTH-KUMAR/MerchantOS) · [Live Demo](https://merchant-os-two.vercel.app)
+#### [MerchantOS](https://github.com/CH-JASWANTH-KUMAR/MerchantOS) · [Live Demo](https://merchant-os-two.vercel.app/)
+*Autonomous revenue intelligence and discount optimization engine.*
+Autonomous revenue decision engine pairing association rule mining with profit-bounded discount optimization. To prevent non-deterministic financial decisions, gross margin calculations and price bounds execute strictly through deterministic TypeScript services verified by 107 automated tests, with commercial actions restricted to Razorpay Test Mode.
+
+`TypeScript` · `Next.js 14` · `Groq API` · `Razorpay Test Mode` · `Jest`
 
 #### [Memra](https://github.com/CH-JASWANTH-KUMAR/memra)
-Privacy-first document generator transforming exported WhatsApp conversations into structured memory books without data persistence.
-* **Technical implementation**: Zero server database; parsing, authenticity scoring, and 11-page printable keepsake PDF compilation execute entirely inside the browser via `jsPDF`, with Groq Llama 3.3 70B generating narrative chapters on demand.
-* **Stack**: Next.js 14 · TypeScript · Tailwind CSS · Groq (Llama 3.3 70B) · jsPDF
-* **Links**: [Repository](https://github.com/CH-JASWANTH-KUMAR/memra)
+*Zero-persistence conversational memory book compiler.*
+Privacy-first document generator transforming exported WhatsApp conversations into structured memory books without server databases. Parsing, authenticity scoring, and 11-page printable keepsake PDF compilation execute entirely inside the client browser via `jsPDF`, using Groq Llama 3.3 70B for on-demand chapter generation.
 
-#### Barabari Collective
-Operational platform and verification workspace developed for grassroots artisan collectives during JPMorgan Chase Code for Good 2026.
-* **Technical implementation**: Engineered the project-isolated RAG architecture using Gemini embeddings and MongoDB Atlas Vector Search, alongside verification agent guardrails backed by a 322-test automated verification suite.
-* **Stack**: Next.js · React · Express · MongoDB Atlas · Google Gemini API · Jest
-* **Team build**: [Code for Good 2026 / Team-30](https://github.com/cfghyderabad26/Team-30) *(Hackathon organization repository)*
+`Next.js 14 (App Router)` · `TypeScript` · `Groq (Llama 3.3 70B)` · `jsPDF` · `Tailwind CSS`
+
+#### Barabari Collective · JPMC Code for Good 2026
+*Artisan operational platform and verification workspace.*
+Operational workspace engineered for grassroots artisan collectives during JPMorgan Chase Code for Good 2026. Architected an isolated RAG retrieval pipeline combining Gemini embeddings with MongoDB Atlas Vector Search, backed by automated verification guardrails to validate model outputs before presentation to field artisans.
+
+`Next.js` · `Express` · `MongoDB Atlas Vector Search` · `Google Gemini API` · `Jest`
 
 ---
 
-### Experience
+### More Work
+
+* **[AI Visibility Score Tracker](https://github.com/CH-JASWANTH-KUMAR/AI-VISIBILITY-SCORE)** — Benchmarks brand presence across four LLMs simultaneously using spaCy NER and FastAPI workers.
+* **[CodeAtlas](https://github.com/CH-JASWANTH-KUMAR/CODEATLAS)** — Repository intelligence tool; engineered the Groq assistant layer and decoupled Prisma for standalone execution.
+* **[CareLoop](https://github.com/CH-JASWANTH-KUMAR/careloop)** — Clinical coordination dashboard for The Ken case competition backed by 31 passing test assertions.
+* **[OCR-to-Excel Pipeline](https://github.com/CH-JASWANTH-KUMAR/OCR-TO-EXCEL-PIPELINE)** — Document extraction pipeline pairing OpenCV preprocessing, PaddleOCR, and schema normalization.
+
+---
+
+### Experience & Milestones
 
 * **Xentro** — Frontend Head
-  * Directed frontend architecture for early-stage product prototypes using Next.js and TypeScript.
-  * Built reusable, strongly typed UI component libraries, role-based workflows, and API-driven dashboard data flows.
+  Directed frontend architecture for early-stage prototypes; built reusable component systems and role-based workflows in Next.js.
+
+* **Toji Labs** — Co-Founder & Software Engineer
+  Delivered web applications and workflow automations across three commercial engagements (₹1L+ revenue) from technical scoping to production.
 
 * **Webbheads** — Full-Stack Developer
-  * Developed CRM, analytics, and inventory management modules with dedicated property-management workflows.
-  * Implemented REST APIs, Google Maps location integrations, and KPI metrics dashboards using Next.js and Tailwind CSS.
+  Built CRM, analytics, and inventory modules with REST APIs, Google Maps integrations, and performance dashboards.
 
-* **Toji Labs** — Co-Founder & Software Engineer *(Student-Led Agency)*
-  * Delivered client-facing web platforms, CRM systems, and workflow automations across 3 client engagements with over ₹1L in project revenue.
-  * Handled the full engineering lifecycle from initial technical scoping and architecture through production deployment.
-
----
-
-### Selected recognition
-
-* **JPMorgan Chase — Code for Good 2026**: Selected as one of three students representing GITAM University for the Hyderabad hackathon, collaborating on the Barabari Collective operational platform.
-* **IdeaSprint 3.0 — Winner**: First place in the AI & Full-Stack track for architecting full-stack AI workflow prototypes.
-* **AWS Student Builder Group — IIT Jodhpur**: Selected among 27 students nationwide from over 250 applicants for an intensive six-month engineering cohort.
+* **JPMorgan Chase — Code for Good 2026**: Selected as one of three students representing GITAM University at the Hyderabad hackathon.
+* **IdeaSprint 3.0 — Winner**: First place in the AI & Full-Stack track for full-stack prototype architecture.
+* **AWS Student Builder Group (IIT Jodhpur)**: Selected among 27 students nationwide from 250+ applicants for a six-month cohort.
 
 ---
 
-### More work
-
-* **[AI Visibility Score Tracker](https://github.com/CH-JASWANTH-KUMAR/AI-VISIBILITY-SCORE)** — Benchmarks brand presence across ChatGPT, Claude, Gemini, and Perplexity using spaCy NER, parallel API workers, and FastAPI.
-* **[CodeAtlas](https://github.com/CH-JASWANTH-KUMAR/CODEATLAS)** — Repository intelligence platform; built the Groq-powered interactive assistant layer and decoupled Prisma for standalone execution.
-* **[CareLoop](https://github.com/CH-JASWANTH-KUMAR/careloop)** — Team build for The Ken case-build competition; engineered the frontend coordination command center with 31 passing deterministic tests.
-* **[OCR-to-Excel Pipeline](https://github.com/CH-JASWANTH-KUMAR/OCR-TO-EXCEL-PIPELINE)** — Dual-stage document parsing system combining OpenCV preprocessing, PaddleOCR, and schema normalization with automated confidence verification.
-
----
-
-### Technical toolkit
+### Technical Toolkit
 
 * **Languages**: TypeScript, JavaScript, Python, Java, SQL
-* **Frontend & Backend**: React, Next.js, Node.js, Express, FastAPI, Tailwind CSS
-* **Data & Infrastructure**: PostgreSQL, MongoDB, Docker, Linux, Git
-* **AI Systems**: Retrieval-Augmented Generation (RAG), Vector Search, Embeddings, Tool Calling, Verification Guardrails, Model Evaluation
-
----
-
-250+ algorithmic challenges solved on LeetCode &nbsp;·&nbsp; Active contributor across Google Developer Groups (GDG), AWS Cloud Club, GitHub Community, and Pragnya Coding Club.
+* **Frontend & Full Stack**: React, Next.js (App Router), Node.js, Express, FastAPI, Tailwind CSS
+* **Data & Systems**: PostgreSQL, MongoDB Atlas, Docker, Linux, Git
+* **AI & Evaluation**: Retrieval-Augmented Generation (RAG), Vector Search, Embeddings, Tool Calling, Verification Guardrails, Model Evaluation
 
 ---
 
 ### Contact
+
+Open to software engineering internships, freelance projects, and technical collaborations.
 
 [LinkedIn](https://www.linkedin.com/in/jaswanth-kumar-chettupalli-7b0809333/) &nbsp;·&nbsp; [GitHub](https://github.com/CH-JASWANTH-KUMAR)
