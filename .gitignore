@@ -8,3 +8,7 @@ __pycache__/
 # Agents and Skills (project-scoped tools)
 .agents/
 skills-lock.json
+
+# Virtual environment and build temp frames
+.venv/
+frames/
