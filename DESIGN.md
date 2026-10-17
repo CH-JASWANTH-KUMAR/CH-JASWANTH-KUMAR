@@ -1,61 +1,70 @@
-# Design System & Visual Identity: Developer Reel
+# Design System & Visual Identity: Cinematic Developer Timeline
 
 ## 1. Creative Direction
 
-**Developer Reel** pairs a programmatic terminal animation with a structured, technical Markdown portfolio.
+**Cinematic Developer Timeline** transforms the GitHub profile into an animated narrative documentary of an engineer's journey.
 
-The design creates a deliberate progression:
-1. **The Opening Scene**: A restrained, text-based terminal animation presenting identity, core technical focus, and verified flagship milestones.
-2. **The Portfolio**: A clean Markdown layout articulating technical tradeoffs, architecture decisions, and engineering milestones.
+The design structure consists of three intentional elements:
+1. **The Tagline Quote**: An original engineering philosophy establishing identity without decorative banner images:
+   > *Software gets interesting when it stops being a demo and starts being dependable.*
+2. **Compact Navigation**: Clean, unobtrusive links to GitHub and LinkedIn.
+3. **The Cinematic Timeline Animation**: A compact terminal window that walks the viewer through chapters of engineering foundations, flagship builds, collaborative achievements, professional experience, and community milestones.
 
-### Visual Design System
+All primary storytelling content lives inside the animated terminal reel. Redundant, lengthy Markdown résumé sections have been removed from the profile page.
+
+---
+
+## 2. Visual Design System
+
 - **Palette**:
-  - Near-black charcoal canvas (`#0E1217` / `#101418`): Harmonious across GitHub Dark (`#0D1117`) and framed on GitHub Light.
-  - Off-white typography (`#F0F4F8` / `#E6EDF3`): High-legibility primary text (contrast > 12:1).
-  - Muted slate-gray (`#8B949E` / `#7D8B99`): Secondary descriptions, branches, and metadata (contrast > 4.8:1).
-  - Subtle sage-green accent (`#88A98E`): Commands, status indicators, and subtle control dot (contrast > 5.5:1).
+  - Near-black charcoal canvas (`#0E1217` / `#0F1216`): Blends harmoniously with GitHub Dark (`#0D1117`) and frames cleanly as a dark terminal card on GitHub Light.
+  - Warm off-white (`#F0F4F8` / `#E6EDF3`): Primary high-legibility typographic elements (contrast > 12:1).
+  - Controlled sage-green accent (`#7EA895` / `#88A98E`): Chapter badges, timeline progress scrubber, and active prompts (contrast > 5.5:1).
+  - Muted slate-gray (`#8B949E`): Secondary technical summaries and architecture descriptions (contrast > 4.8:1).
+  - Dim slate (`#646E78`): Contextual tertiary metadata and timeline track background (`#1C222A`).
 - **Typography**:
-  - Terminal: JetBrains Mono (Open Font License) with monospace fallback.
-  - Markdown: GitHub native high-legibility type stack (`-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif`).
-- **Restraint Principles**:
-  - No decorative ASCII mascots, rainbow colors, neon glow, or wall of badges.
-  - No fake BIOS diagnostics, fictional dates, or fabricated terminal commands.
-  - No third-party card widgets or broken external dependencies.
+  - JetBrains Mono (SIL Open Font License 1.1) rendered locally without external network dependencies.
+  - Unified typographic hierarchy optimized for high legibility across mobile viewports (320px–375px):
+    - Scene Headlines: 28 px Bold (`font_title`)
+    - Subheadings & Key Metrics: 20 px Bold (`font_subtitle`)
+    - Supporting Lines (max 2 per scene): 20 px Regular (`font_body`)
+    - Terminal Prompt Line: 20 px Bold (`font_prompt`)
+    - Window Shell Title & Scrubber Indicator: 13 px Regular / Bold (`font_header` / `font_badge`)
+  - Generous line-height, dedicated project scenes, and guaranteed right margin (> 50 px) ensuring zero text clipping across mobile screens.
+- **Form Factor**:
+  - Dimensions: `680 × 320` px (compact wide-screen 2.125:1 cinematic ratio).
+  - Embedded at native 680 px width (`width="680"` in README) to avoid desktop over-scaling while allowing GitHub's responsive styling to naturally constrain the image on narrow viewports.
 
 ---
 
-## 2. Terminal Animation Storyboard
+## 3. Narrative Storyboard (8 Chapters)
 
-The animation in `assets/developer-reel.gif` executes a 5-stage narrative loop (~10.8s):
+The animation in `assets/developer-reel.gif` executes a 19.0-second narrative loop across 8 dedicated chapters:
 
-| Stage | Command / Prompt | Content Displayed | Intent |
+| Chapter | Scrubber | Theme | Key Storytelling Content |
 | :--- | :--- | :--- | :--- |
-| **1. Identity** | `$ whoami` | `CH_JASWANTH_KUMAR · GITAM University` | Introduces the engineer with crisp, bold typography. |
-| **2. Engineering Focus** | `$ cat focus.spec` | `Software Engineering / Full Stack / AI Systems` | Establishes technical discipline taxonomy. |
-| **3. Selected Builds** | `$ tree ./selected-work` | `merchantos/` & `memra/` | Highlights flagship independent builds and automated test guards. |
-| **4. Team Engineering** | *(tree continuation)* | `barabari/` | Showcases JPMorgan Chase Code for Good 2026 participation. |
-| **5. Closing Callout** | `$ explore --projects` | `→ Technical architecture & source code below.` | Guides the reader into the Markdown portfolio below. |
-
-### Technical Specifications
-- **Dimensions**: `740 × 390` px (optimized for desktop sharpness and 320–375px mobile scale).
-- **File Size**: ~21.3 KB (highly compact, fast cold-load).
-- **Frame Optimization**: Adaptive 32-color quantized palette with variable frame durations (100ms typing, 1.1s–2.2s reading pauses).
-- **Accessibility**: Comprehensive descriptive alt text embedded in Markdown.
+| **01** | `[1/8]` | **The Foundations** | Computer Science @ GITAM · Full-Stack & Systems Architecture · Bounded automation & deterministic math services · Moving software from demo to dependable. |
+| **02** | `[2/8]` | **MerchantOS** | Flagship revenue engine · 107 automated tests · Profit-bounded discount engine for digital commerce · Deterministic pricing guards protect margin math. |
+| **03** | `[3/8]` | **Memra** | Privacy-first memory books · In-browser PDF engine · In-browser compilation with zero cloud storage · Client-side PDF generation via native Web APIs. |
+| **04** | `[4/8]` | **AI Visibility Tracker** | Applied AI & benchmarking · Cross-model brand presence analytics · Benchmarking presence across 4 LLMs · spaCy entity recognition & citation auditing. |
+| **05** | `[5/8]` | **Barabari Collective** | Collaborative engineering @ JPMorgan Chase Code for Good 2026 · Operational platform built for artisan teams · Isolated RAG with Gemini & MongoDB Vector Search. |
+| **06** | `[6/8]` | **Professional Experience** | Clean role roster without unverified dates: **Xentro** (Frontend Head) & **Toji Labs** (Co-founder & Engineer) · **Webbheads** (Full-Stack Developer · CRM & REST APIs). |
+| **07** | `[7/8]` | **Recognition & Communities** | **IdeaSprint 3.0** (1st place winner) & **AWS Student Builders** · Technical core team @ **GDG GITAM** & **AWS Cloud Club**. |
+| **08** | `[8/8]` | **The Next Chapter** | *THE NEXT CHAPTER* · Dependable Systems & Autonomous Workflows · Seeking software engineering internships · Prompt: `> journey --continue ▌`. |
 
 ---
 
-## 3. Regenerating the Terminal Animation
+## 4. Technical Specifications & Reproduction
 
-The animation is generated with `scripts/generate_reel.py` using Python and Pillow (`PIL`).
+- **File**: `assets/developer-reel.gif`
+- **Resolution**: `680 × 320` px
+- **Duration**: `19.00` seconds
+- **File Size**: `92.49` KB (fast cold load, zero lag)
+- **Palette**: Adaptive 32-color quantized palette with zero dithering noise.
+- **Generator**: `scripts/generate_reel.py` (Python 3 + Pillow)
 
-### Requirements
-```bash
-pip install pillow
-```
-
-### Run Generator
+### How to Regenerate
 ```bash
 python3 scripts/generate_reel.py
 ```
-
-The script outputs `assets/developer-reel.gif` directly into the repository.
+Outputs `assets/developer-reel.gif` in place.
