@@ -2,12 +2,9 @@
 
 > You don't need everything figured out to build something that matters.
 
-Computer Science undergraduate at GITAM University focused on full-stack systems, reliable architecture, and applied AI. I enjoy engineering autonomous decision engines, privacy-first web platforms, and production-ready developer tools.
-
 <p align="center">
   <a href="https://github.com/CH-JASWANTH-KUMAR"><strong>GitHub</strong></a> &nbsp;&bull;&nbsp;
-  <a href="https://www.linkedin.com/in/jaswanth-kumar-chettupalli-7b0809333/"><strong>LinkedIn</strong></a> &nbsp;&bull;&nbsp;
-  <a href="mailto:jaswanthchettupalli@gmail.com"><strong>Email</strong></a>
+  <a href="https://www.linkedin.com/in/jaswanth-kumar-chettupalli-7b0809333/"><strong>LinkedIn</strong></a>
 </p>
 
 <div align="center">
@@ -22,9 +19,18 @@ Computer Science undergraduate at GITAM University focused on full-stack systems
 
 ---
 
-### Selected Projects
+### THE WORKBENCH
 
-- **[MerchantOS](https://github.com/CH-JASWANTH-KUMAR/MerchantOS)** &mdash; Autonomous revenue decision and discount-optimization engine for online merchants, backed by 107 verified automated tests across Next.js 16, React 19, Express 5, and Python ML services.
-- **[Memra](https://github.com/CH-JASWANTH-KUMAR/memra)** &mdash; Privacy-first conversation-to-memory-book application featuring on-device WhatsApp chat parsing, Groq Llama 3.3 narrative synthesis, and in-browser 11-page PDF compilation with zero server-side storage.
-- **[AI Visibility Score Tracker](https://github.com/CH-JASWANTH-KUMAR/AI-VISIBILITY-SCORE)** &mdash; Multi-model brand intelligence platform that programmatically audits LLM responses, extracts competitor rankings, and calculates normalized visibility scores via FastAPI, PostgreSQL, and Redis.
-- **Barabari Collective &mdash; Fellows Hub** &mdash; Project-isolated vector RAG workbench and verification platform built during JPMorgan Chase Code for Good 2026, pairing Gemini 768D embeddings with MongoDB Atlas Vector Search.
+<div align="center">
+  <img alt="The Workbench - Engineering Map" src="./assets/workbench.svg" width="100%">
+</div>
+
+<p align="center">
+  <em>Curious about the whole journey &mdash; from the interface people see to the systems that make it work.</em>
+</p>
+
+---
+
+<p align="center">
+  <sub>Still curious. Still building. Still figuring it out.</sub>
+</p>
